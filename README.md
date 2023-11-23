@@ -1,25 +1,19 @@
 # Socket.io : Chat
 
-Cette application reprend les sources du tutoriel présent sur le blog [bini.io](http://blog.bini.io) :
+Cette application est une adaptation et reprend les sources du tutoriel [tutoriel officiel](http://socket.io/get-started/chat/) de socket.io.
 
-* [Partie 1](http://blog.bini.io/developper-une-application-avec-socket-io/)
-* [Partie 2](http://blog.bini.io/developper-un-chat-avec-socket-io-partie-2/)
-* [Partie 3](http://blog.bini.io/developper-un-chat-avec-socket-io-partie-3/)
+Cette version introduit des améliorations par rapport à la version originale du tutoriel. Voici les nouvelles fonctionnalités intégrées:
 
-Ce tutoriel est lui même une adaptation du [tutoriel officiel](http://socket.io/get-started/chat/) de socket.io.
 
-Cette version ajoute les fonctionnalités suivantes par rapport à la version du tutoriel officiel :
-
-* Support des noms d'utilisateurs
-* Affichage d'un message lors de la connexion/déconnexion d'un utilisateur
+* Prise en charge des noms d'utilisateurs
+* Affichage de messages de connexion/déconnexion
 * Affichage de la liste des utilisateurs connectés
-* Conservation d'un historique des messages
-* Affichage du texte "typing" à côté du nom des utilisateurs en train de saisir un message
-
+* Historique des messages persistant
+* Affichage de l'indicateur "typing"
 
 ## Installation
 
-Si vous n'avez pas bower d'installé sur votre machine, installez-le au préalable de la façon suivante :
+Si Bower n'est pas encore installé sur votre machine, veuillez le faire au préalable en suivant ces étapes :
 ```
 npm install -g bower
 ```

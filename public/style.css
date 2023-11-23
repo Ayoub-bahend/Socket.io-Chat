@@ -1,91 +1,123 @@
+/* Réinitialisation des styles par défaut pour éviter les différences entre les navigateurs */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Définition de la hauteur à 100% pour les éléments HTML, body et head */
 html, body, head {
     height: 100%;
 }
+
+/* Styles généraux pour le corps de la page */
 body {
-    font: 13px Helvetica, Arial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.5s;
 }
 
+/* Styles spécifiques lorsque l'utilisateur est déconnecté */
 body#logged-out {
-    background: rgb(223, 223, 223);
+    background: #f0f0f0;
 }
+
 body#logged-out section#chat {
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
+
 body#logged-out section#login {
     opacity: 1;
 }
+
+/* Styles pour la section de chat */
 section#chat {
     height: 100%;
 }
+
 section#chat form {
-    background: #000;
-    padding: 3px;
+    background: #2c3e50;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 50px;
 }
+
 section#chat form input {
     border: 0;
-    padding: 5px 10px;
-    width: 90%;
+    padding: 10px;
+    width: 80%;
     height: 100%;
-    margin-right: .5%;
-	font-size: 20px;
+    margin-right: 2%;
+    font-size: 16px;
+    color: #333;
 }
+
 section#chat form button {
-    width: 9%;
-    height: 100%;
-    background: #e67e22;
+    width: 17%; /* Largeur du bouton Send */
+    height: 120%; /* Hauteur du bouton Send */
+    background: #3498db;
     float: right;
     border: none;
     margin-right: 0.5%;
     font-size: 17px;
     color: white;
 }
+
+/* Styles pour la liste des messages dans la section de chat */
 section#chat #messages {
     list-style-type: none;
     display: inline-block;
     width: calc(100% - 250px);
     margin: 0;
     padding: 0;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
+    overflow-y: auto;
 }
+
+/* Styles pour chaque message dans la liste */
 section#chat #messages li {
-    padding: 5px 10px;
+    padding: 10px;
 }
+
+/* Styles pour les messages impairs dans la liste */
 section#chat #messages li:nth-child(odd) {
-    background: #eee;
+    background: #ecf0f1;
 }
+
+/* Styles pour les messages de déconnexion */
 section#chat #messages li.logout {
-	background: #E5A6A6;
+    background: #e74c3c;
+    color: white;
 }
+
+/* Styles pour les messages de connexion */
 section#chat #messages li.login {
-	background: #A8E5A6;
+    background: #2ecc71;
+    color: white;
 }
+
+/* Styles pour les étiquettes dans les messages */
 section#chat #messages li span.label {
-	display: inline-block;
-	padding: 6px 10px;
-	margin-right: 5px;
-	color: white;
-	background: #e67e22;
-	border-radius: 5px;
+    display: inline-block;
+    padding: 8px;
+    margin-right: 5px;
+    color: white;
+    background: #3498db;
+    border-radius: 5px;
 }
+
+/* Styles pour les informations dans les messages */
 section#chat #messages li span.info {
-	display: inline-block;
-	padding: 3px 10px;
-	margin-right: 5px;
-	color: white;
-	background: #e67e22;
-	border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+    margin-right: 5px;
+    color: white;
+    background: #3498db;
+    border-radius: 5px;
 }
+
+/* Styles pour la liste des utilisateurs dans la section de chat */
 section#chat #users {
     display: inline-block;
     position: fixed;
@@ -94,54 +126,69 @@ section#chat #users {
     width: 250px;
     list-style-type: none;
     height: 100%;
-    padding-bottom: 50px;
-    border-left: 3px solid #eee;
+    padding-bottom: 60px;
+    border-left: 3px solid #3498db;
 }
+
+/* Styles pour les nouveaux utilisateurs dans la liste des utilisateurs */
 section#chat #users li.new {
-    background: #e67e22;
+    background: #e74c3c;
     color: white;
 }
+
+/* Styles pour chaque utilisateur dans la liste */
 section#chat #users li {
-    padding: 6px 10px;
-    margin: 10px 10px;
+    padding: 10px;
+    margin: 10px;
     border-radius: 5px;
-    border: 1px solid #e67e22;
-    color: black;
+    border: 1px solid #3498db;
+    color: #333;
     transition: all 0.5s;
 }
+
+/* Styles pour l'indication de la saisie d'un message par un utilisateur */
 section#chat #users li span.typing {
     float: right;
     font-style: italic;
-    color: #eee;
+    color: #666;
 }
+
+/* Styles pour la section de connexion */
 section#login {
     transition: all 0.5s;
     opacity: 0;
     top: 35%;
     text-align: center;
     position: fixed;
-    width: 100%
+    width: 100%;
 }
+
+/* Styles pour les étiquettes dans la section de connexion */
 section#login label[for="u"] {
-	display: block;
-	font-size: 24px;
-	margin-bottom: 10px;
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
+
+/* Styles pour le champ de saisie dans la section de connexion */
 section#login input#u {
-	font-size: 25px;
-	text-align: center;
-	padding: 5px;
-	border: 5px solid rgb(158, 158, 158);
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border: 5px solid #3498db;
 }
+
 section#login input#u:focus {
-	outline: none;
+    outline: none;
 }
+
+/* Styles pour le bouton dans la section de connexion */
 section#login button {
-	background: #e67e22;
-	border: none;
-	padding: 5px 80px;
-	color: white;
-	font-size: 20px;
-	margin-top: 20px;
-	cursor: pointer;
+    background: #3498db;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
 }
