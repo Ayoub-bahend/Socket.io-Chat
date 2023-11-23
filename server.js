@@ -128,6 +128,7 @@ io.on('connection', function (socket) {
     }
   });
 
+  
   /**
    * Réception de l'événement 'start-typing'
    * L'utilisateur commence à saisir son message
